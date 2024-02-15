@@ -1,0 +1,5 @@
+
+
+CREATE USER 'ali'@'localhost' IDENTIFIED BY '4441919@tel';
+
+GRANT ALL PRIVILEGES ON * . * TO 'ali'@'localhost';

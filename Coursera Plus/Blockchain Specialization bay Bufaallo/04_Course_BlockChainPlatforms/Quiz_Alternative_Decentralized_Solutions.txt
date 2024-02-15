@@ -1,0 +1,212 @@
+€ Back
+
+Alternative Decentralized Solutions
+Graded Quiz + 1h + 20 total points
+
+1.
+
+v
+
+w
+
+s
+
+w
+
+a
+
+_
+
+©
+
+What is the IPFS hash of myfile1.txt when you added the file to IPFS? Please copy the hash as an answer below.
+Make sure you do not include any leading or trailing spaces.
+
+Note: If you are taking this quiz after a previous attempt and have changed the content of myfilet.txt, we
+
+recommend you download the file again and use it instead of reverting the changes in the old one.
+
+If this is your first attempt, please ignore this note.
+
+QmdQGKkvPDbMErygDQ4FaV4A6ADER4vbv8vFUUvsiwpHQ)
+
+Whatis the size, in characters, of an IPFS file hash using Base58 encoding method?
+
+O «
+O 2
+© #4
+O 2
+
+. What are 58 alphanumeric characters making up the Base58?
+
+O Capital letters, lowercase letters, Numerals 0 and 1 and_,-, & %
+O Capital Letters from A-X, Lowercase letters from a-x, Numerals 0-9
+© Capital letters without (0, |), Lowercase letters without (I), Numerals without (0)
+
+O Capital letters without (Q), Lowercase letters without (m) and numbers 1-8
+
+. What is the command to add a file logo.txt to the IPFS using command line interface?
+
+O pfs cat logo.txt
+O ipfs send logo.txt
+©  ipfs add logo.txt
+
+© ipfs pin logo.txt
+
+« What is the command for viewing a text file myfile1.txt using the command line interface?
+
+Oo ipfs check myfile1.txt
+O ipfs view myfilet.txt
+CO pfs get myfile1.txt
+
+ipfs cat myfilel.txt
+
+. How do you access the web interface to the IPFS in the exercise that you completed?
+
+© Through a browser using localhost://5001/webui
+O By downloading the additional webui pack from the ipfs website
+CO Through a browser using https://gateway.ipfs.io/ipfs/
+
+© Through the command line by typing ipfs webui
+
++ What is DAG with reference to IPFS?
+
+© Directory of Addressed Graph
+© Daemon Address Generation
+
+O Directed Acylic Graph of all the files/objects in the IPFS
+
+. What information does the Connection tab of the IPFS provide?
+
+© Network statistics about the user’s internet connection
+© Have-Want table of Bitswap
+
+©@ The details of the peers currently connected to the IPFS
+
+. What is the IPFS hash of the folder that you added to IPFS? Please copy the hash as answer below. Make sure you
+
+do not include any leading or trailing spaces.
+
+Note: If you are taking this quiz after a previous attempt and have changed the content of myfile1.txt, we
+
+recommend you download the file again and use it instead of reverting the changes in the ald one.
+
+If this is your first attempt, please ignore this note.
+
+QmScVyy3AUpBgWuVDWRnGJ9XcD 1Ppz1mUtrRH6EA7XLWgL
+
+1point
+
+1point
+
+i point
+
+1 point
+
+1point
+
+1point
+
+1point
+
+Due Sep 18, 11:59 PM +07
+10. Edit the content of myfile1.txt. Add a single “A” as the first character to the file. Now what happens to the hash of
+the myfile1. bt?
+
+O One character in the hash value changes
+© Distributed Hash Table recognizes it as a single change to the file and keeps the old hash
+© Whole hash changes to a different hash value
+
+O File corrupted warning shows up
+
+14. When the myfile1.txt was changed as above, what happens to the hash address of the folder?
+
+© one character in the hash changes
+© whole hash changes to a different hash value
+O File corrupted warning shows up
+
+© Distributed Hash Table recognizes it as a single change to the file and keeps the old hash
+
+12. IPFS is IP-addressed. True or False?
+
+O True
+© False
+
+13. The files on the IPFS are stored on all the nodes on an immutable ledger. True or False?
+
+O True
+@ False
+
+14. How are files on IPFS addressed?
+
+O universally unique hash
+© Location on the immutable ledger
+© Location of the file on some node in the IPFS
+
+© Location of the file on some server
+
+15. If two different nodes add the same file, then__.
+
+© Their hashes will be different.
+© Their hashes will be same provided the filenames are the same
+
+© The hashes will be the same
+
+16. IPFS is strictly blockchain-based. True or False?
+
+O True
+© False
+
+17. IPFS currently only offers support for text and image files. True or False?
+
+@ True
+O False
+
+18. What is the command for downloading a text file myfile1.txt using the command line interface?
+
+© ipfs get <hash of myfile txt>
+CO ipfs store <hash of myfile1 txt>
+CO pfs did <hash of myfilet.txt>
+
+© ipfs fetch <hash of myfile1txt>
+
+19. Base58 encoding scheme has fewer distinct symbols than Base64 encoding scheme to .
+
+O Reduce the complexity by removing 8 characters
+© Remove bugs arising due to common string operation characters like +
+© Make it easier for humans by eliminating ambiguous characters
+
+O Remove possibility of breaks in code because of characters like “and;
+
+20. How do you view the hash of a file that is already on the IPFS using the CLI?
+
+© using ipfs view
+
+1point
+
+1point
+
+1point
+
+1 point
+
+1 point
+
+1 point
+
+1point
+
+1point
+© Using ipfs files Is -1
+O Using ipfs hash ls -l
+
+© Using ipfs get
+
+Coursera Honor Code Learn more
+
+|, Linh T. Nguyen, understand that submitting work that isn’t my own may result in permanent failure of this course or
+
+deactivation of my Coursera account.
+
+Vy Like CD Dislike [1 Reportanissue
+

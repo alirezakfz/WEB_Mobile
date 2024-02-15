@@ -1,0 +1,41 @@
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root@123';
+
+CREATE USER 'root'@'192.168.1.8' IDENTIFIED BY 'root@123';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.1.8';
+
+
+
+CREATE USER 'rootGlobal'@'%' IDENTIFIED BY 'root@123';
+GRANT ALL PRIVILEGES ON *.* TO 'rootGlobal'@'%';
+
+FLUSH PRIVILEGES;
+
+/var/run/mysqld
+mkdir -p /var/run/mysqld
+
+
+
+sudo nano /etc/mysql/mysql.conf.d/reset-mysql-password.cnf
+
+[mysqld]
+skip-grant-tables
+
+sudo mysqld_safe --skip-grant-tables &
+
+mysql -u root
+
+FLUSH PRIVILEGES;
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root@123';
+
+
+sudo rm /etc/mysql/mysql.conf.d/reset-mysql-password.cnf
+
+sudo service mysql restart
+
+sudo systemctl status mysql
