@@ -8,6 +8,9 @@ CREATE USER 'root'@'192.168.1.8' IDENTIFIED BY 'root@123';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.1.8';
 
 
+CREATE USER 'admindjango'@'192.168.1.8' IDENTIFIED BY 'employee@123!'; 
+GRANT ALL ON *.* TO 'admindjango'@'192.168.1.8';
+
 
 CREATE USER 'rootGlobal'@'%' IDENTIFIED BY 'root@123';
 GRANT ALL PRIVILEGES ON *.* TO 'rootGlobal'@'%';
