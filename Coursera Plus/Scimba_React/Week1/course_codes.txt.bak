@@ -1,0 +1,864 @@
+Index.html
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.js" type="text/babel"></script>
+    </body>
+</html>
+
+
+***************************************************************************
+***************************************************************************
+
+
+import React from "react"
+import ReactDOM from "react-dom/client"
+
+const navbar = (
+    <nav>
+        <h1>Bob's Bistro</h1>
+        <ul>
+            <li>Menu</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+)
+
+// ReactDOM.render(navbar, document.getElementById("root"))
+ReactDOM.createRoot(document.getElementById("root")).render(navbar)
+
+
+
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+import ReactDOM from "react-dom/client"
+
+const navbar = (
+    <nav>
+        <h1>Bob's Bistro</h1>
+        <ul>
+            <li>Menu</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+)
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(navbar)
+
+
+***************************************************************************
+***************************************************************************
+
+Why React? It's declarative
+index.js
+
+const h1 = document.createElement("h1")
+h1.textContent = "This is an imperative way to program"
+h1.className = "header"
+document.getElementById("root").append(h1)
+
+
+***************************************************************************
+***************************************************************************
+
+Thought experiment: use .append() instead of ReactDOM.render()?
+		/**
+		Challenge: find out what happens if we try to append JSX
+		to our div#root using .append() instead of ReactDOM
+
+		1. Create a sample page in JSX (≥ 4 elements) and save them in a variable
+		2. Select the div with the ID of "root" and use `.append()` to append
+		   your JSX
+		3. See if you can guess what will show up in the browser before running
+		   the code
+		4. See if you can explain what actually shows up in the browser
+		 */
+ 
+ const jsxVar = (
+	<div>
+		<h1>Test to append JSX into JS</h1>
+		<ul>
+			<li>Item1 JSX</li>
+			<li>Item2 JSX</li>
+			<li>Item3 JSX</li>
+		</ul>
+		<p>Test the varible you can!!</p>
+	<div>
+ )
+ 
+document.getElementById("root").append(JSON.stringify(jsxVar))
+
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+		/**
+		Challenge: fix our code!
+
+		Don't forget, you're not using CDNs anymore, so there's no
+		global "ReactDOM" variable to use anymore.
+		 */
+
+const page = (
+    <div>
+        <h1>My awesome website in React</h1>
+        <h3>Reasons I love React</h3>
+        <ol>
+            <li>It's composable</li>
+            <li>It's declarative</li>
+            <li>It's a hireable skill</li>
+            <li>It's actively maintained by skilled people</li>
+        </ol>
+    </div>
+)
+
+ReactDOM.render(page, document.getElementById("root"))
+// document.getElementById("root").append(JSON.stringify(page))
+
+
+***************************************************************************
+***************************************************************************
+
+Project part 1 - markup
+
+		/*
+		Challenge: Starting from scratch, build and render the 
+		HTML for our section project. Check the Google slide for 
+		what you're trying to build.
+
+		We'll be adding styling to it later.
+
+		Hints:
+		* The React logo is a file in the project tree, so you can
+		  access it by using `src="./react-logo.png" in your image
+		  element
+		* You can also set the `width` attribute of the image element
+		  just like in HTML. In the slide, I have it set to 40px
+		 */
+ 
+import React from "react"
+import ReactDOM from "react-dom"
+
+const page = (
+    <div>
+        <img src="./react-logo.png" width="40px" />
+        <h1>Fun facts about React</h1>
+        <ul>
+            <li>Was first released in 2013</li>
+            <li>Was originally created by Jordan Walke</li>
+            <li>Has well over 100K stars on GitHub</li>
+            <li>Is maintained by Facebook</li>
+            <li>Powers thousands of enterprise apps, including mobile apps</li>
+        </ul>
+    </div>
+)
+
+console.log(page)
+
+ReactDOM.render(page, document.getElementById("root"))
+
+
+***************************************************************************
+***************************************************************************
+
+Pop quiz!
+
+1. Why do we need to `import React from "react"` in our files?
+React is what defines JSX
+
+2. If I were to console.log(page) in index.js, what would show up?
+A JavaScript object. React elements that describe what React should
+eventually add to the real DOM for us.
+
+3. What's wrong with this code:
+```
+const page = (
+    <h1>Hello</h1>
+    <p>This is my website!</p>
+)
+```
+We need our JSX to be nested under a single parent element
+
+4. What does it mean for something to be "declarative" instead of "imperative"?
+Declarative means I can tell the computer WHAT to do 
+and expect it to handle the details. Imperative means I need
+to tell it HOW to do each step.
+
+5. What does it mean for something to be "composable"?
+We have small pieces that we can put together to make something
+larger/greater than the individual pieces.
+
+
+***************************************************************************
+***************************************************************************
+
+Custom Components
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+
+function TemporaryName() {
+    return (
+        <div>
+            <img src="./react-logo.png" width="40px" />
+            <h1>Fun facts about React</h1>
+            <ul>
+                <li>Was first released in 2013</li>
+                <li>Was originally created by Jordan Walke</li>
+                <li>Has well over 100K stars on GitHub</li>
+                <li>Is maintained by Facebook</li>
+                <li>Powers thousands of enterprise apps, including mobile apps</li>
+            </ul>
+        </div>
+    )
+}
+
+ReactDOM.render(<TemporaryName />, document.getElementById("root"))
+
+***************************************************************************
+***************************************************************************
+
+Custom Components
+
+		/**
+		Challenge: 
+
+		Part 1: Create a page of your own using a custom Page component
+
+		It should return an ordered list with the reasons why you're
+		excited to be learning React :)
+
+		Render your list to the page
+
+		 */
+import React from "react"
+import ReactDOM from "react-dom"
+
+function CustomPage() {
+    return (
+    <div>
+        <img src="./react-logo.png" width="40px" />
+        <ul>
+            <li>New Projetc</li>
+            <li>Job Requirement</li>
+        </ul>
+        
+    </div>
+)}
+
+
+ReactDOM.render(<CustomPage/>, document.getElementById("root"))
+
+***************************************************************************
+***************************************************************************
+
+Custom Components part 2
+
+		/**
+		Challenge: 
+
+		Part 2: 
+		- Add a `header` element with a nested `nav` element. Inside the `nav`,
+		  include a `img` element with the image of the React logo inside
+		  (src="./react-logo.png") and make sure to set the width to something
+		  more manageable so it doesn't take up the whole screen
+		- Add an `h1` with some text describing the page. (E.g. "Reasons
+		  I'm excited to learn React"). Place it above the ordered list.
+		- Add a `footer` after the list that says: 
+			"© 20xx <last name here> development. All rights reserved."
+
+		 */
+		 
+import React from "react"
+import ReactDOM from "react-dom"
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+function Page() {
+    return (
+        <div>
+            <header>
+                <nav>
+                    <img src="./react-logo.png" width="40px" />
+                </nav>
+            </header>
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+            <footer>
+                <small>© 2021 Ziroll development. All rights reserved.</small>
+            </footer>
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
+
+
+***************************************************************************
+***************************************************************************
+
+Parent/Child Components
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+/**
+Challenge: 
+
+- Move the `footer` into its own component called "Footer" 
+  and render that component inside the Page component.
+- Move the `h1` and `ol` together into another component
+  called "MainContent" and render inside Page as well.
+*/
+
+function Header() {
+    return (
+        <header>
+            <nav>
+                <img src="./react-logo.png" width="40px" />
+            </nav>
+        </header>
+    )
+}
+
+function Footer() {
+    return (
+        <footer>
+            <small>© 2021 Ziroll development. All rights reserved.</small>
+        </footer>
+    )
+}
+
+function MainContent() {
+    return (
+        <div>
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+        </div>
+    )
+}
+
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
+
+
+***************************************************************************
+***************************************************************************
+
+
+*/
+const nums = [1, 2, 3, 4, 5]
+// -->       [1, 4, 9, 16, 25]
+// Your code here
+const double = nums.map((x) => x*x)
+//console.log(double)
+
+const squares = nums.map(function(num) {
+    return num * num
+})
+
+
+/*
+Challenge 2:
+Given an array of strings, return an array where 
+the first letter of each string is capitalized
+*/
+
+const names = ["alice", "bob", "charlie", "danielle"]
+// -->        ["Alice", "Bob", "Charlie", "Danielle"]
+// Your code here
+const capitalizedNames = names.map(name => {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+});
+
+//console.log(capitalizedNames);
+
+const capitalized = names.map((name) => {
+    return name[0].toUpperCase() + name.slice(1)
+})
+
+
+
+/*
+Challenge 3:
+Given an array of strings, return an array of strings that wraps each
+of the original strings in an HTML-like <p></p> tag.
+
+E.g. given: ["Bulbasaur", "Charmander", "Squirtle"]
+return: ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
+*/
+
+const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
+// -->          ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
+// Your code here
+
+const wrapp = pokemon.map(x => {
+    return "<p>" + x + "/p"})
+    
+console.log(wrapp)
+
+const paragraphs = pokemon.map(mon => `<p>${mon}</p>`)
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+import Joke from "./Joke"
+import jokesData from "./jokesData"
+
+/*
+Challenge: See if you can correctly pass the necessary props to the 
+Joke component in the .map() (and render the jokeElements array) so 
+the jokes show up on the page again
+*/
+
+export default function App() {
+    
+    const jokeElements = jokesData.map(joke => <Joke key={joke.setup} setup={joke.setup} punchline={joke.punchline} /> )
+    return (
+        <div>
+            {jokeElements}
+        </div>
+    )
+}
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Card from "./components/Card"
+import data from "./data.js"
+
+/*
+Challenge:
+
+- import the array of data from data.js
+- map over the array to create <Card /> components
+- display the array of card components under the navbar
+  (in place of the current <Card /> component)
+
+Note: We haven't styled the group of components yet, so they'll
+still be block elements, stacked vertically. We'll add styling later.
+*/
+
+export default function App() {
+            // <Hero />
+    
+    const dataCards = data.map(item => (
+                    <Card
+                        key={item.id}
+                        img={item.coverImg}
+                        rating={item.stats.rating}
+                        reviewCount={item.stats.reviewCount}
+                        location={item.location}
+                        title={item.title}
+                        price={item.price}
+                    />
+                        )); 
+    
+    return (
+        <div>
+            <Navbar />
+            <Card 
+                img="katie-zaferes.png"
+                rating="5.0"
+                reviewCount={6}
+                location="USA"
+                title="Life Lessons with Katie Zaferes"
+                price={136}
+            />
+           {dataCards}
+        </div>
+    )
+}
+
+
+***************************************************************************
+***************************************************************************
+
+
+import React from "react"
+
+export default function App() {
+    const [count, setCount] = React.useState(0)
+    /**
+     * Note: if you ever need the old value of state
+     * to help you determine the new value of state,
+     * you should pass a callback function to your
+     * state setter function instead of using
+     * state directly. This callback function will
+     * receive the old value of state as its parameter,
+     * which you can then use to determine your new
+     * value of state.
+     */
+    function add() {
+        setCount(prevCount => prevCount + 1)
+    }
+    // Challenge: update `substract` to use a callback function
+    
+    function subtract() {
+        setCount(prevCount => prevCount - 1)
+    }
+    
+    return (
+        <div className="counter">
+            <button className="counter--minus" onClick={subtract}>–</button>
+            <div className="counter--count">
+                <h1>{count}</h1>
+            </div>
+            <button className="counter--plus" onClick={add}>+</button>
+        </div>
+    )
+}
+
+
+***************************************************************************
+***************************************************************************
+
+
+import React from "react";
+import memesData from "../memesData.js";
+
+export default function Meme() {
+  const [memeImage, setMemeImage] = React.useState(""); // Initialize state with empty string
+
+  function getMemeImage() {
+    const memesArray = memesData.data.memes;
+    const randomNumber = Math.floor(Math.random() * memesArray.length);
+    const randomMemeUrl = memesArray[randomNumber].url;
+
+    // Update state with the randomly chosen image URL
+    setMemeImage(randomMemeUrl);
+  }
+
+  return (
+    <main>
+      <div className="form">
+        <input type="text" placeholder="Top text" className="form--input" />
+        <input type="text" placeholder="Bottom text" className="form--input" />
+        <button className="form--button" onClick={getMemeImage}>
+          Get a new meme image 
+        </button>
+        {/* Conditionally render the image only if memeImage has a value */}
+        {memeImage && <img src={memeImage} width="200px" />}
+      </div>
+    </main>
+  );
+}
+
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+
+export default function App() {
+    const [isGoingOut, setIsGoingOut] = React.useState(true)
+    /**
+     * Challenge: 
+     * - Initialize state for `isGoingOut` as a boolean
+     * - Make it so clicking the div.state--value flips that
+     *   boolean value (true -> false, false -> true)
+     * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
+     */
+    
+    return (
+        <div className="state">
+            <h1 className="state--title">Do I feel like going out tonight?</h1>
+            <div onClick={() => setIsGoingOut(prev => prev ? false : true)} className="state--value">
+                <h1>{isGoingOut ? "Yes" : "No"}</h1>
+            </div>
+        </div>
+    )
+}
+
+***************************************************************************
+***************************************************************************
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function App() {
+    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
+    
+    function addItem() {
+        setThingsArray(prevState => {
+            return [...prevState, `Thing ${prevState.length + 1}`]
+        })
+    }
+    
+    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
+    
+    return (
+        <div>
+            <button onClick={addItem}>Add Item</button>
+            {thingsElements}
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+***************************************************************************
+***************************************************************************
+
+
+import React from "react"
+
+export default function App() {
+    const [contact, setContact] = React.useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "+1 (719) 555-1212",
+        email: "itsmyrealname@example.com",
+        isFavorite: false
+    })
+    
+    let starIcon = contact.isFavorite ? "star-filled.png" : "star-empty.png"
+    
+    function toggleFavorite() {
+        setContact(prevContact => {
+            return {
+                ...prevContact,
+                isFavorite: !prevContact.isFavorite
+            }
+        })
+    }
+    
+    return (
+        <main>
+            <article className="card">
+                <img src="./images/user.png" className="card--image" />
+                <div className="card--info">
+                    <img 
+                        src={`../images/${starIcon}`} 
+                        className="card--favorite"
+                        onClick={toggleFavorite}
+                    />
+                    <h2 className="card--name">
+                        {contact.firstName} {contact.lastName}
+                    </h2>
+                    <p className="card--contact">{contact.phone}</p>
+                    <p className="card--contact">{contact.email}</p>
+                </div>
+                
+            </article>
+        </main>
+    )
+}
+
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+import boxes from "./boxes"
+import Box from "./Box"
+
+export default function App() {
+    const [squares, setSquares] = React.useState(boxes)
+    
+    function toggle(id) {
+        /**
+         * Challenge: use setSquares to update the
+         * correct square in the array.
+         * 
+         * Make sure not to directly modify state!
+         * 
+         * Hint: look back at the lesson on updating arrays
+         * in state if you need a reminder on how to do this
+         */
+        setSquares(prevState => prevState.map(square => square.id===id ? {
+            ...square,
+            on : !square.on
+        } : {...square}))
+    }
+    
+    const squareElements = squares.map(square => (
+        <Box 
+            key={square.id} 
+            id={square.id}
+            on={square.on} 
+            toggle={toggle}
+        />
+    ))
+    
+    return (
+        <main>
+            {squareElements}
+        </main>
+    )
+}
+
+
+
+
+
+import React from "react"
+
+export default function Box(props) {
+    const styles = {
+        backgroundColor: props.on ? "#222222" : "transparent"
+    }
+    
+    return (
+        <div 
+            style={styles} 
+            className="box"
+            onClick={()=>props.toggle(props.id)}
+        >
+        </div>
+    )
+}
+
+***************************************************************************
+***************************************************************************
+
+
+import React from "react"
+
+export default function Joke(props) {
+    /**
+     * Challenge:
+     * - Create state `isShown` (boolean, default to `false`)
+     * - Add a button that toggles the value back and forth
+     */
+    const [isShown, setIsShown] = React.useState(true)
+    function changeState(){
+        setIsShown(prev => !prev)
+    }
+    
+    return (
+        <div>
+            {props.setup && <h3>{props.setup}</h3>}
+            {isShown && <p>{props.punchline}</p>}
+            <button onClick={changeState}>{isShown ? "Show": "Hide"} punchline</button>
+            <hr />
+        </div>
+    )
+}
+
+
+***************************************************************************
+***************************************************************************
+
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+
+
+import React from "react"
+
+export default function App() {
+    const [messages, setMessages] = React.useState(["a"])
+    /**
+     * Challenge:
+     * - If there are no unread messages, display "You're all caught up!"
+     * - If there are > 0 unread messages, display "You have <n> unread
+     *   message(s)"
+     *      - If there's exactly 1 unread message, it should read "message"
+     *        (singular)
+     */
+    const message = messages.length===0 ? "You're all caught up!" : `You have ${messages.length} unread message${messages.length === 1 ? '' : 's'}`
+    return (
+        <div>
+            <h1>{message}</h1>
+        </div>
+    )
+}
+
+***************************************************************************
+***************************************************************************
+
+import React from "react"
+
+export default function Form() {
+    const [formData, setFormData] = React.useState(
+        {firstName: "", lastName: "", email:""}
+    )
+    
+    /**
+     * Challenge: add an email field/state to the form
+     */
+    
+    console.log(formData)
+    
+    function handleChange(event) {
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+    
+    return (
+        <form>
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+                name="firstName"
+            />
+            <input
+                type="text"
+                placeholder="Last Name"
+                onChange={handleChange}
+                name="lastName"
+            />
+            <input
+                type="email"
+                placeholder="example@test.com"
+                onChange={handleChange}
+                name="email"
+            />
+        </form>
+    )
+}

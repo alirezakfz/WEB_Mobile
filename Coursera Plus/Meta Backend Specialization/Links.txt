@@ -1,0 +1,42 @@
+An overview of HTTP
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+	
+Node.js tutorial in Visual Studio Code
+	https://code.visualstudio.com/docs/nodejs/nodejs-tutorial
+	
+Visual Studio Code in Action
+	https://code.visualstudio.com/docs
+
+HTML elements reference
+	https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+<form>: The Form element
+	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+
+What is the Document Object Model?
+	https://www.w3.org/TR/WD-DOM/introduction.html
+
+ARIA in HTML(W3C via Github)
+	https://w3c.github.io/html-aria/
+
+ARIA Authoring Practices  (W3C)
+	https://www.w3.org/WAI/ARIA/apg/
+
+CSS reference
+	https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+Learn to style HTML using CSS
+	https://developer.mozilla.org/en-US/docs/Learn/CSS
+
+
+https://github.com/CrypticFate5/Meta-Back-End-Developer-Professional-Certificate/tree/main/C2-%20Programming%20in%20Python/W-4
+
+
+Modern Test-Driven Development in Python
+	https://testdriven.io/blog/modern-tdd/
+
+pytest: helps you write better programs
+	https://docs.pytest.org/en/7.1.x/
+
+
+

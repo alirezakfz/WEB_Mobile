@@ -1,0 +1,14 @@
+h1 {
+    color: purple;
+}
+
+#header1 {
+    color: green;
+}
+
+p { 
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-decoration: underline red solid 2px;
+  }
