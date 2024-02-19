@@ -80,6 +80,29 @@ nav ul a:hover {
     text-decoration-thickness: 0.1rem;
 }
 
+#login {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+#login > a{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: auto;
+    padding: 0 20px;
+    background-color: lightslategrey;
+    color: #070641;
+    border-radius: 2px;
+}
+
+#login >p{
+    padding-right: 10px;
+    font-family: 'Markazi Text', serif;
+    font-size: 1.25rem;
+}
+
 section {
     display: flex;
     gap: 2rem 1rem;
